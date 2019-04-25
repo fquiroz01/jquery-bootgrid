@@ -504,9 +504,10 @@ Grid.prototype.destroy = function()
  * @method reload
  * @chainable
  **/
-Grid.prototype.reload = function()
+Grid.prototype.reload = function(keepCurrentPage)
 {
-    this.current = 1; // reset
+    if (!keepCurrentPage)
+        this.current = 1; // reset
     loadData.call(this);
 
     return this;
